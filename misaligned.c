@@ -1,21 +1,12 @@
 #include <stdio.h>
 #include <assert.h>
 #include <string.h> 
-
-const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
-const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
-
-// Structure which will act as a repository to return the color pair information
-typedef struct{
-    int colorPairNumber;
-    const char *majorColor;
-    const char *minorColor;
-}colorPairRepository;
+#include "config.h"
 
 int printColorMap() 
 {
-    int i = 0, j = 0;
-    colorPairRepository colorPairData[];
+    int i = 0, j = 0, counter = 0;
+    colorPairRepository colorPairData[MAX_COLOR_PAIR_POSSIBLE ];
     for(i = 0; i < 5; i++) 
     {
         for(j = 0; j < 5; j++) 
@@ -23,7 +14,8 @@ int printColorMap()
             colorPairData.colorPairNumber = i * 5 + j;
             colorPairData.majorColor = majorColor[i];
             colorPairData.minorColor = minorColor[i];
-            printf("%d | %s | %s\n", colorPair.colorPairData, colorPair.majorColor, colorPair.minorColor);
+            counter = counter + 1;
+            printf("%d | %s | %s\n", colorPairData.colorPairNumber, colorPairData.majorColor, colorPairData.minorColor);
         }
     }
     return i * j;
