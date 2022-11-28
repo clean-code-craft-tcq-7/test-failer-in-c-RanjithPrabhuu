@@ -5,16 +5,18 @@
 
 int printColorMap() 
 {
-    int i = 0, j = 0, counter = 0;
-    colorPairRepository colorPairData[MAX_COLOR_PAIR_POSSIBLE ];
+    int test_counter = 0;
+    colorPairRepository test_colorPairData[MAX_COLOR_PAIR];
+    
+    int i = 0, j = 0;
     for(i = 0; i < 5; i++) 
     {
         for(j = 0; j < 5; j++) 
         {
-            colorPairData.colorPairNumber = i * 5 + j;
-            colorPairData.majorColor = majorColor[i];
-            colorPairData.minorColor = minorColor[i];
-            counter = counter + 1;
+            test_colorPairData[test_counter].colorPairNumber = i * 5 + j;
+            test_colorPairData[test_counter].majorColor = majorColor[i];
+            test_colorPairData[test_counter].minorColor = minorColor[i];
+            test_counter = test_counter + 1;
             printf("%d | %s | %s\n", colorPairData.colorPairNumber, colorPairData.majorColor, colorPairData.minorColor);
         }
     }
@@ -26,45 +28,13 @@ int main()
     int result = printColorMap();
     assert(result == 25);
 
-    colorPair colorPair;
-    // Note: As per the requirement (wiki), color code should be in range from 1 to 25. 
-    // Let me assume index is returned here instead of colorCode.
-    // So I consider this as per implementation instead of requirement. Let me concentrate on 
-    // validating the color pair combination
-
-    // Test case 2: Validate the color pair combination for index 0,0
-    colorPair = getColorCode(0, 0);
-    assert(colorPair.colorCode == 0);
-    assert(strcmp(colorPair.majorColor, majorColor[0]) == 0);
-    assert(strcmp(colorPair.minorColor, minorColor[0]) == 0);
-
-    // Test case 3: Validate the color pair combination for index 0,1
-    colorPair = getColorCode(0, 1);
-    assert(colorPair.colorCode == 1);
-    assert(strcmp(colorPair.majorColor, majorColor[0]) == 0);
-    assert(strcmp(colorPair.minorColor, minorColor[1]) == 0);
-
-    // Test case 4: Validate the color pair combination for index 0,2
-    colorPair = getColorCode(0, 2);
-    assert(colorPair.colorCode == 2);
-    assert(strcmp(colorPair.majorColor, majorColor[0]) == 0);
-    assert(strcmp(colorPair.minorColor, minorColor[2]) == 0);
-
-    // Test case 5: Validate the color pair combination for index 0,3
-    colorPair = getColorCode(0, 3);
-    assert(colorPair.colorCode == 3);
-    assert(strcmp(colorPair.majorColor, majorColor[0]) == 0);
-    assert(strcmp(colorPair.minorColor, minorColor[3]) == 0);
-
-    // Test case 6: Validate the color pair combination for index 0,4
-    colorPair = getColorCode(0, 4);
-    assert(colorPair.colorCode == 4);
-    assert(strcmp(colorPair.majorColor, majorColor[0]) == 0);
-    assert(strcmp(colorPair.minorColor, minorColor[4]) == 0);
-
-    // Test cases shall be extened for all the combinations for (1,0), (1,1), (1,2) ... (4,4)
-    // Test cases for indices (0,0), (1,1), (2,2), (3,3) and (4,4) shall be passed. Rest of the
-    // other combinations are failing
+    assert(test_colorPairData[0].colorPairNumber == 1);
+    assert(strcmp(test_colorPairData[0].majorColor, "White") == 0);
+    assert(strcmp(test_colorPairData[0].minorColor, "Blue") == 0);
+    assert(test_colorPairData[1].colorPairNumber == 2);
+    assert(strcmp(colorPairNumber[1].majorColor, "White") == 0);
+    assert(strcmp(colorPairNumber[1].minorColor, "Orange") == 0);
+    
     printf("All is well (maybe!)\n");
     return 0;
 }
