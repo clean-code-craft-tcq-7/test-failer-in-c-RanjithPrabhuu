@@ -13,11 +13,12 @@ int printColorMap()
     {
         for(j = 0; j < 5; j++) 
         {
+            printf("%d | %s | %s\n", test_colorPairData.colorPairNumber, test_colorPairData.majorColor, test_colorPairData.minorColor);
+            
             test_colorPairData[test_counter].colorPairNumber = i * 5 + j;
             test_colorPairData[test_counter].majorColor = majorColor[i];
             test_colorPairData[test_counter].minorColor = minorColor[i];
             test_counter = test_counter + 1;
-            printf("%d | %s | %s\n", colorPairData.colorPairNumber, colorPairData.majorColor, colorPairData.minorColor);
         }
     }
     return i * j;
