@@ -3,17 +3,18 @@
 #include <string.h> 
 #include "config.h"
 
+
+int test_counter = 0;
+colorPairRepository test_colorPairData[MAX_COLOR_PAIR];
+
 int printColorMap() 
-{
-    int test_counter = 0;
-    colorPairRepository test_colorPairData[MAX_COLOR_PAIR];
-    
+{   
     int i = 0, j = 0;
     for(i = 0; i < 5; i++) 
     {
         for(j = 0; j < 5; j++) 
         {
-            printf("%d | %s | %s\n", test_colorPairData.colorPairNumber, test_colorPairData.majorColor, test_colorPairData.minorColor);
+            printf("%d | %s | %s\n",i * 5 + j, majorColor[i], minorColor[i]);
             
             test_colorPairData[test_counter].colorPairNumber = i * 5 + j;
             test_colorPairData[test_counter].majorColor = majorColor[i];
