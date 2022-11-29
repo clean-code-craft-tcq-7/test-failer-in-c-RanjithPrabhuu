@@ -7,7 +7,8 @@ int alertFailureCount = 0;
 #ifdef UNIT_TEST //start of macro to switch between test code and production code
 #define networkAlert networkAlertStub
 int test_AlertStatusOfNetwork = 0;
-int networkAlertStub(float celcius) {
+int networkAlertStub(float celcius) 
+{
     printf("ALERT: Temperature is %.1f celcius.\n", celcius);
     // Return 200 for ok
     // Return 500 for not-ok
@@ -16,10 +17,12 @@ int networkAlertStub(float celcius) {
 }
 #endif //end of macro to switch between test code and production code
 
-void alertInCelcius(float farenheit) {
+void alertInCelcius(float farenheit) 
+{
     float celcius = (farenheit - 32) * 5 / 9;
     int returnCode = networkAlertStub(celcius);
-    if (returnCode != 200) {
+    if (returnCode != 200) 
+    {
         // non-ok response is not an error! Issues happen in life!
         // let us keep a count of failures to report
         // However, this code doesn't count failures!
