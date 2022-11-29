@@ -3,10 +3,8 @@
 #include <string.h> 
 #include "config.h"
 
-#ifdef UNIT_TEST
 int test_counter = 0;
 colorPairRepository test_colorPairData[MAX_COLOR_PAIR];
-#endif
 
 int printColorMap() 
 {   
@@ -17,12 +15,10 @@ int printColorMap()
         {
             printf("%d | %s | %s\n",i * 5 + j, majorColor[i], minorColor[i]);
             
-            #ifdef UNIT_TEST
             test_colorPairData[test_counter].colorPairNumber = i * 5 + j;
             test_colorPairData[test_counter].majorColor = majorColor[i];
             test_colorPairData[test_counter].minorColor = minorColor[i];
             test_counter = test_counter + 1;
-            #endif
         }
     }
     return i * j;
