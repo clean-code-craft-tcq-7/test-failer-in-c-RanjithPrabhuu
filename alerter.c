@@ -4,10 +4,9 @@
 
 int alertFailureCount = 0;
 
-#ifdef UNIT_TEST
+#ifdef UNIT_TEST //start of macro to switch between test code and production code
 #define networkAlert networkAlertStub
 int test_AlertStatusOfNetwork = 0;
-
 int networkAlertStub(float celcius) {
     printf("ALERT: Temperature is %.1f celcius.\n", celcius);
     // Return 200 for ok
@@ -15,7 +14,7 @@ int networkAlertStub(float celcius) {
     // stub always succeeds and returns 200
     return test_AlertStatusOfNetwork;
 }
-#endif
+#endif //end of macro to switch between test code and production code
 
 void alertInCelcius(float farenheit) {
     float celcius = (farenheit - 32) * 5 / 9;
@@ -29,16 +28,20 @@ void alertInCelcius(float farenheit) {
     }
 }
 
-int main() {
-    //Test 1: Network alerter gives status 200
-    testNetworkAlertStatus = 200;
+int main() 
+{
+    //test case when alert status is 200
+    test_AlertStatusOfNetwork = 200;
     alertInCelcius(400.5);
     assert(alertFailureCount == 0);
-    //Test 2: Network alerter gives status 500
-    testNetworkAlertStatus = 500;
+    printf("%d alerts failed.\n", alertFailureCount);
+    
+    //test case when alert status is 500
+    test_AlertStatusOfNetwork = 500;
     alertInCelcius(303.6);
     assert(alertFailureCount == 1);
     printf("%d alerts failed.\n", alertFailureCount);
+    
     printf("All is well (maybe!)\n");
     return 0;
 }
