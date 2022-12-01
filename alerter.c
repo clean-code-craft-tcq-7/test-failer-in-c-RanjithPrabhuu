@@ -5,11 +5,6 @@
 // flag to return the failure count
 int alertFailureCount = 0;
 
-int networkAlertStub(float celcius) ;
-
-//Function handler for test stub function
-networkAlertStub_FunPtr networkAlert = networkAlertStub;
-
 //flag to return the alert status for test cases
 int test_AlertStatusOfNetwork = 0;
 
@@ -21,6 +16,9 @@ int networkAlertStub(float celcius)
     // stub always succeeds and returns 200
     return test_AlertStatusOfNetwork;
 }
+
+//Function handler for test stub function
+networkAlertStub_FunPtr networkAlert = networkAlertStub;
 
 void alertInCelcius(float farenheit) 
 {
