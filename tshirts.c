@@ -19,10 +19,17 @@ int main() {
     assert(size(43) == 'L');
     
     //newly added tests
-    assert(size(38) == 'S'); //Test to check the boundary value 38 for "s" size
-    assert(size(38) == 'M'); //Test to check the boundary value 38 for "m" size
-    assert(size(42) == 'M'); //Test to check the boundary value 42 for "m" size
-    assert(size(42) == 'L'); //Test to check the boundary value 42 for "l" size
+    assert(size(38) == 'S'); //Test to check the max boundary value 38 for "s" size
+    assert(size(42) == 'M'); //Test to check the max boundary value 42 for "m" size
+    //or
+    assert(size(38) == 'M'); //Test to check the min boundary value 38 for "m" size
+    assert(size(42) == 'L'); //Test to check the min boundary value 42 for "l" size
+    //or
+    assert(size(38) == 'S'); //Test to check the max boundary value 38 for "s" size
+    assert(size(42) == 'L'); //Test to check the min boundary value 42 for "l" size
+    //or
+    assert(size(38) == 'M'); //Test to check the min boundary value 38 for "m" size
+    assert(size(42) == 'M'); //Test to check the max boundary value 42 for "m" size
     
     printf("All is well (maybe!)\n");
     return 0;
