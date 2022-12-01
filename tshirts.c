@@ -18,19 +18,12 @@ int main() {
     assert(size(40) == 'M');
     assert(size(43) == 'L');
     
-    //newly added tests
-    //test 1 to validate the max boundary value 38 for "s" size and the max boundary value 42 for "m" size
-    assert(size(38) == 'S'); //Test to check the max boundary value 38 for "s" size
-    assert(size(42) == 'M'); //Test to check the max boundary value 42 for "m" size
-    //test 2 to validate the min boundary value 38 for "m" size and the min boundary value 42 for "l" size
-    assert(size(38) == 'M'); //Test to check the min boundary value 38 for "m" size
-    assert(size(42) == 'L'); //Test to check the min boundary value 42 for "l" size
-    //test 3 to validate the max boundary value 38 for "s" size and the min boundary value 42 for "l" size
-    assert(size(38) == 'S'); //Test to check the max boundary value 38 for "s" size
-    assert(size(42) == 'L'); //Test to check the min boundary value 42 for "l" size
-    //test 4 to validate the min boundary value 38 for "m" size and the max boundary value 42 for "m" size
-    assert(size(38) == 'M'); //Test to check the min boundary value 38 for "m" size
-    assert(size(42) == 'M'); //Test to check the max boundary value 42 for "m" size
+    // Assuming size 38 is for "m" and size 42 is for "l". With this understanding s < 38 , m >= 38 and < 42 , l >= 42
+    assert(size(35) == 'S');
+    assert(size(38) == 'M');
+    assert(size(40) == 'M');
+    assert(size(42) == 'L');
+    assert(size(44) == 'L');
     
     printf("All is well (maybe!)\n");
     return 0;
