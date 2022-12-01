@@ -5,6 +5,8 @@
 // flag to return the failure count
 int alertFailureCount = 0;
 
+int networkAlertStub(float celcius) ;
+
 //Function handler for test stub function
 networkAlertStub_FunPtr networkAlert = networkAlertStub;
 
