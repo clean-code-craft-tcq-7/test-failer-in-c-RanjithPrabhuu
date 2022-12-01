@@ -24,13 +24,10 @@ void alertInCelcius(float farenheit)
 {
     float celcius = (farenheit - 32) * 5 / 9;
     int returnCode;
-    if(networkAlert != 0)
-        returnCode = (*networkAlert)(celcius);
-    else
-    {
-        // production code
-        returnCode = 200;
-    }  
+    if(networkAlert != 0) 
+        returnCode = (*networkAlert)(celcius);  // test code
+    else      
+        returnCode = 200;  // production code
     
     if (returnCode != 200) 
     {
