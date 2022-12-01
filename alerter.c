@@ -6,7 +6,7 @@
 int alertFailureCount = 0;
 
 //Function handler for test stub function
-networkAlerStub_FunPtr networkAlert = networkAlertStub;
+networkAlertStub_FunPtr networkAlert = networkAlertStub;
 
 //flag to return the alert status for test cases
 int test_AlertStatusOfNetwork = 0;
