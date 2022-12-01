@@ -1,4 +1,3 @@
-#define UNIT_TEST   1
 #define MAX_COLOR_PAIR 25
 
 // array to hold the major and minor color names
@@ -13,4 +12,4 @@ typedef struct{
 }colorPairRepository;
 
 //function pointer for test codes
-typedef int (*networkAlerStub_FunPtr )(float);
+typedef int (*networkAlertStub_FunPtr )(float);
