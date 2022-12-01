@@ -33,13 +33,37 @@ void alertInCelcius(float farenheit)
 
 int main() 
 {
-    //test case when alert status is 200
+    //test case when alert status is 200 and threshold temperature is equal 392 F
+    test_AlertStatusOfNetwork = 200;
+    alertInCelcius(392);
+    assert(alertFailureCount == 0);
+    printf("%d alerts failed.\n", alertFailureCount);
+    
+     //test case when alert status is 500 and threshold temperature is equal 392 F
+    test_AlertStatusOfNetwork = 500;
+    alertInCelcius(392);
+    assert(alertFailureCount == 1);
+    printf("%d alerts failed.\n", alertFailureCount);
+    
+    //test case when alert status is 200 and threshold temperature is greater than 392 F
     test_AlertStatusOfNetwork = 200;
     alertInCelcius(400.5);
     assert(alertFailureCount == 0);
     printf("%d alerts failed.\n", alertFailureCount);
     
-    //test case when alert status is 500
+    //test case when alert status is 500 and threshold temperature is greater than 392 F
+    test_AlertStatusOfNetwork = 500;
+    alertInCelcius(400.5);
+    assert(alertFailureCount == 1);
+    printf("%d alerts failed.\n", alertFailureCount);
+    
+    //test case when alert status is 200 and threshold temperature is lesser than 392 F
+    test_AlertStatusOfNetwork = 200;
+    alertInCelcius(303.6);
+    assert(alertFailureCount == 0);
+    printf("%d alerts failed.\n", alertFailureCount);
+    
+    //test case when alert status is 500 and threshold temperature is lesser than 392 F
     test_AlertStatusOfNetwork = 500;
     alertInCelcius(303.6);
     assert(alertFailureCount == 1);
