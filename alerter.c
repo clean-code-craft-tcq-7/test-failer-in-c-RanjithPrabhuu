@@ -6,7 +6,7 @@
 int alertFailureCount = 0;
 
 //Function handler for test stub function
-networkAlerStub_FunPtr networkAlertStub = networkAlertStub;
+networkAlerStub_FunPtr networkAlert = networkAlertStub;
 
 //flag to return the alert status for test cases
 int test_AlertStatusOfNetwork = 0;
@@ -23,7 +23,7 @@ int networkAlertStub(float celcius)
 void alertInCelcius(float farenheit) 
 {
     float celcius = (farenheit - 32) * 5 / 9;
-    returnCode = (*networkAlertStub)(celcius);
+    returnCode = (*networkAlert)(celcius);
     if (returnCode != 200) 
     {
         // non-ok response is not an error! Issues happen in life!
