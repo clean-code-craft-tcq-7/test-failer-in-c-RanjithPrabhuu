@@ -72,6 +72,8 @@ int main()
     char colorPairBuffer[TABLE_ROW_SIZE];
     formatColorPairString(colorPairBuffer, 0);
     assert(strcmp(colorPairBuffer,"1  | White  | Blue") == 0);
+    formatColorPairString(colorPairBuffer, 16);
+    assert(strcmp(colorPairBuffer,"17 | Yellow | Orange") == 0);
     
     printf("All is well (maybe!)\n");
     return 0;
