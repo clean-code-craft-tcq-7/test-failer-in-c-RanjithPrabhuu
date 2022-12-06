@@ -23,7 +23,7 @@ void printColorMap()
         for(j = 0; j < 5; j++) 
         {       
             //statements to copy the pair num and colors to buffer which is used in printing the table
-            test_colorPairData[counter].colorPairNumber = ((i * 5 + j) + 1);
+            test_colorPairData[counter].colorPairNumber = (i * 5 + j) + 1;
             test_colorPairData[counter].majorColor = majorColor[i];
             test_colorPairData[counter].minorColor = minorColor[j];     
             
@@ -73,7 +73,7 @@ int main()
     printColorPair(colorPairBuffer, 0);
     assert(strcmp(colorPairBuffer,"1  | White  | Blue") == 0);
     printColorPair(colorPairBuffer, 1);
-    assert(strcmp(colorPairBuffer,"2 | Yellow | Orange") == 0);
+    assert(strcmp(colorPairBuffer,"2  | Yellow | Orange") == 0);
     
     printf("All is well (maybe!)\n");
     return 0;
