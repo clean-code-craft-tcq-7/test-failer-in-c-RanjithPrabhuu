@@ -8,7 +8,7 @@ int counter = 0;
 colorPairRepository test_colorPairData[MAX_COLOR_PAIR];
 char colorPairBuffer[MAX_COLOR_PAIR][TABLE_ROW_SIZE];
 
-int printColorMap() 
+void printColorMap() 
 {   
     int i = 0, j = 0;
     for(i = 0; i < 5; i++) 
