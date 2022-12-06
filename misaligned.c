@@ -6,7 +6,7 @@
 //variable added for test case addition
 int counter = 0;
 colorPairRepository test_colorPairData[MAX_COLOR_PAIR];
-char colorPairBuffer[MAX_COLOR_PAIR];
+char* colorPairBuffer[MAX_COLOR_PAIR];
 
 void printColorMap() 
 {   
