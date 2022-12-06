@@ -73,7 +73,7 @@ int main()
     printColorPair(colorPairBuffer, 0);
     assert(strcmp(colorPairBuffer,"1  | White  | Blue") == 0);
     printColorPair(colorPairBuffer, 1);
-    assert(strcmp(colorPairBuffer,"2  | White | Orange") == 0);
+    assert(strcmp(colorPairBuffer,"2  | White  | Orange") == 0);
     
     printf("All is well (maybe!)\n");
     return 0;
