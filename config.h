@@ -1,4 +1,5 @@
 #define MAX_COLOR_PAIR 25
+#define TABLE_ROW_SIZE 50
 
 // array to hold the major and minor color names
 const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
