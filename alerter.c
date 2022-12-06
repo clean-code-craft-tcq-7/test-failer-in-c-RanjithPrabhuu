@@ -33,25 +33,18 @@ void alertInCelcius(float farenheit,int(*networkAlert)(float), float threshold)
 
 int main() 
 {
-    //Test 1: Threshold is 150 degreeC, input is 301.5F and Network alerter gives status 200
-    testNetworkAlertStatus = 200;
-    alertInCelcius(301.5, networkAlertStub, 150);
+    //Test 1 is Threshold is 200 degreeC, farenheit is 400F and Network alerter gives status 200
+    test_AlertStatusOfNetwork = 200;
+    alertInCelcius(400, networkAlertStub, 200);
     assert(alertFailureCount == 0);
-    //Test 2: Threshold is 150 degreeC, input is 302F and Network alerter gives status 200
-    testNetworkAlertStatus = 200;
-    alertInCelcius(302, networkAlertStub, 150);
-    assert(alertFailureCount == 0);
-    //Test 3: Threshold is 150 degreeC, input is 302.4F and Network alerter gives status 200
-    testNetworkAlertStatus = 200;
-    alertInCelcius(302.4, networkAlertStub, 150);
-    assert(alertFailureCount == 0);
-    //Test 4: Threshold is 150 degreeC, input is 303.5F and Network alerter gives status 500
-    testNetworkAlertStatus = 500;
-    alertInCelcius(303.5, networkAlertStub, 150);
-    assert(alertFailureCount == 1);
-    
     printf("%d alerts failed.\n", alertFailureCount);
     
+    //Test 2 is Threshold is 200 degreeC, farenheit is 350F and Network alerter gives status 500
+    test_AlertStatusOfNetwork = 500;
+    alertInCelcius(3505, networkAlertStub, 200);
+    assert(alertFailureCount == 1);   
+    printf("%d alerts failed.\n", alertFailureCount);
+
     printf("All is well (maybe!)\n");
     return 0;
 }
