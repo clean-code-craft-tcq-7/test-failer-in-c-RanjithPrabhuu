@@ -4,8 +4,9 @@
 #include "config.h"
 
 //variable added for test case addition
-int test_counter = 0;
+int counter = 0;
 colorPairRepository test_colorPairData[MAX_COLOR_PAIR];
+char colorPairBuffer[MAX_COLOR_PAIR][50];
 
 int printColorMap() 
 {   
@@ -13,17 +14,20 @@ int printColorMap()
     for(i = 0; i < 5; i++) 
     {
         for(j = 0; j < 5; j++) 
-        {
-            printf("%d | %s | %s\n",i * 5 + j, majorColor[i], minorColor[i]);
+        {       
+            //statements to copy the pair num and colors to buffer which is used in printing the table
+            test_colorPairData[counter].colorPairNumber = i * 5 + j;
+            test_colorPairData[counter].majorColor = majorColor[i];
+            test_colorPairData[counter].minorColor = minorColor[j]          
             
-            //statements added for test case addition
-            test_colorPairData[test_counter].colorPairNumber = i * 5 + j;
-            test_colorPairData[test_counter].majorColor = majorColor[i];
-            test_colorPairData[test_counter].minorColor = minorColor[i];
-            test_counter = test_counter + 1;
+            // print color pair
+            memset(colorPairBuffer[counter], 0, 50);
+            sprintf(colorPairBuffer[counter],"%-2d | %-6s | %s\n",test_colorPairData[counter].colorPairNumber,test_colorPairData[counter].majorColor,test_colorPairData[test_counter].minorColor);
+            printf("%s\n", colorPairBuffer[counter]);
+            
+            counter = counter + 1;
         }
     }
-    return i * j;
 }
 
 int main()
@@ -58,6 +62,10 @@ int main()
     assert(strcmp(test_colorPairData[4].minorColor, minorColor[4]) == 0); //This will fail since the minorColor[i] will be same for all the 5 pairs of a major color
       
     // similar to the above 5 test cases for major color "white", the test cases can be extended for all the other four major color's and their minor color pair's
+    
+    // test case to check the indentation
+    assert(strcmp(colorPairStrBuff[0],"1  | White  | Blue") == 0);
+    
     printf("All is well (maybe!)\n");
     return 0;
 }
