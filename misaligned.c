@@ -7,7 +7,7 @@
 int counter = 0;
 colorPairRepository test_colorPairData[MAX_COLOR_PAIR];
 
-void formatColorPairString(char* colorPairBuff, int Idx)
+void printColorPair(char* colorPairBuff, int Idx)
 {
     memset(colorPairBuff, 0, TABLE_ROW_SIZE);
     sprintf(colorPairBuff, "%-2d | %-6s | %s",test_colorPairData[Idx].colorPairNumber,test_colorPairData[Idx].majorColor, test_colorPairData[Idx].minorColor);
@@ -23,12 +23,12 @@ void printColorMap()
         for(j = 0; j < 5; j++) 
         {       
             //statements to copy the pair num and colors to buffer which is used in printing the table
-            test_colorPairData[counter].colorPairNumber = i * 5 + j;
+            test_colorPairData[counter].colorPairNumber = ((i * 5 + j) + 1);
             test_colorPairData[counter].majorColor = majorColor[i];
             test_colorPairData[counter].minorColor = minorColor[j];     
             
             // print color pair
-            formatColorPairString(colorPairBuffer, counter);
+            printColorPair(colorPairBuffer, counter);
             printf("%s\n", colorPairBuffer);
             
             counter = counter + 1;       
@@ -70,10 +70,10 @@ int main()
     
     // test case to check the indentation
     char colorPairBuffer[TABLE_ROW_SIZE];
-    formatColorPairString(colorPairBuffer, 0);
-    assert(strcmp(colorPairBuffer,"0  | White  | Blue") == 0);
-    formatColorPairString(colorPairBuffer, 16);
-    assert(strcmp(colorPairBuffer,"16 | Yellow | Orange") == 0);
+    printColorPair(colorPairBuffer, 0);
+    assert(strcmp(colorPairBuffer,"1  | White  | Blue") == 0);
+    printColorPair(colorPairBuffer, 1);
+    assert(strcmp(colorPairBuffer,"2 | Yellow | Orange") == 0);
     
     printf("All is well (maybe!)\n");
     return 0;
