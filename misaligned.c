@@ -16,7 +16,7 @@ void formatColorPairString(char* colorPairBuff, int Idx)
 void printColorMap() 
 {   
     int i = 0, j = 0;
-    char colorPairBuffer[MAX_COLOR_PAIR];
+    char colorPairBuffer[TABLE_ROW_SIZE];
     
     for(i = 0; i < 5; i++) 
     {
@@ -69,9 +69,9 @@ int main()
     // similar to the above 5 test cases for major color "white", the test cases can be extended for all the other four major color's and their minor color pair's
     
     // test case to check the indentation
-    char colorPairBuff[TABLE_ROW_SIZE];
-    formatColorPairString(colorPairBuff, 0);
-    assert(strcmp(colorPairBuff,"1  | White  | Blue") == 0);
+    char colorPairBuffer[TABLE_ROW_SIZE];
+    formatColorPairString(colorPairBuffer, 0);
+    assert(strcmp(colorPairBuffer,"1  | White  | Blue") == 0);
     
     printf("All is well (maybe!)\n");
     return 0;
