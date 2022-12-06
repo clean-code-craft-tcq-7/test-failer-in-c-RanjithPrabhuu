@@ -6,7 +6,7 @@
 //variable added for test case addition
 int counter = 0;
 colorPairRepository test_colorPairData[MAX_COLOR_PAIR];
-char colorPairBuffer[MAX_COLOR_PAIR][50];
+char colorPairBuffer[MAX_COLOR_PAIR][TABLE_ROW_SIZE];
 
 int printColorMap() 
 {   
@@ -21,7 +21,7 @@ int printColorMap()
             test_colorPairData[counter].minorColor = minorColor[j]          
             
             // print color pair
-            memset(colorPairBuffer[counter], 0, 50);
+            memset(colorPairBuffer[counter], 0, TABLE_ROW_SIZE);
             sprintf(colorPairBuffer[counter],"%-2d | %-6s | %s\n",test_colorPairData[counter].colorPairNumber,test_colorPairData[counter].majorColor,test_colorPairData[test_counter].minorColor);
             printf("%s\n", colorPairBuffer[counter]);
             
