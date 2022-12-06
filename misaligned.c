@@ -10,7 +10,7 @@ colorPairRepository test_colorPairData[MAX_COLOR_PAIR];
 void formatColorPairString(char* colorPairBuff, int Idx)
 {
     memset(colorPairBuff, 0, TABLE_ROW_SIZE);
-    sprintf(colorPairBuff, "%-2d | %-6s | %s",colorPairData[pairIdx].pairNum,colorPairData[pairIdx].majorColor, colorPairData[pairIdx].minorColor);
+    sprintf(colorPairBuff, "%-2d | %-6s | %s",test_colorPairData[Idx].pairNum,test_colorPairData[Idx].majorColor, test_colorPairData[Idx].minorColor);
 }
 
 void printColorMap() 
