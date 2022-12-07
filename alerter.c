@@ -39,6 +39,12 @@ int main()
     assert(alertFailureCount == 0);
     printf("%d alerts failed.\n", alertFailureCount);
     
+    //Test 2 is Threshold is 200 degreeC, farenheit is 420F and Network alerter gives status 200
+    test_AlertStatusOfNetwork = 200;
+    alertInCelcius(420, networkAlertStub, 200);
+    assert(alertFailureCount == 0);
+    printf("%d alerts failed.\n", alertFailureCount);
+    
     //Test 2 is Threshold is 200 degreeC, farenheit is 350F and Network alerter gives status 500
     test_AlertStatusOfNetwork = 500;
     alertInCelcius(350, networkAlertStub, 200);
