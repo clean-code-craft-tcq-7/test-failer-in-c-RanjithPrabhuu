@@ -74,6 +74,12 @@ int main()
     assert(strcmp(colorPairBuffer,"1  | White  | Blue") == 0);
     printColorPair(colorPairBuffer, 1);
     assert(strcmp(colorPairBuffer,"2  | White  | Orange") == 0);
+    printColorPair(colorPairBuffer, 2);
+    assert(strcmp(colorPairBuffer,"3  | White  | Green") == 0);
+    printColorPair(colorPairBuffer, 3);
+    assert(strcmp(colorPairBuffer,"4  | White  | Brown") == 0);
+    printColorPair(colorPairBuffer, 4);
+    assert(strcmp(colorPairBuffer,"5  | White  | Slate") == 0);
     
     printf("All is well (maybe!)\n");
     return 0;
