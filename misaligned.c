@@ -81,6 +81,8 @@ int main()
     printColorPair(colorPairBuffer, 4);
     assert(strcmp(colorPairBuffer,"5  | White  | Slate") == 0);
     
+    // similar to the above 5 test cases for major color "white" indentation check, the test cases can be extended for all the other four major color's and their minor color pair's
+    
     printf("All is well (maybe!)\n");
     return 0;
 }
