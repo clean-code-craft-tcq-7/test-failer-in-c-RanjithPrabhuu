@@ -2,7 +2,7 @@
 #include "testAlerter.h"
 
 // variable to return the network alert status
-int testNetworkAlertStatus;
+int test_AlertStatusOfNetwork ;
 
 //function definition of network alert test stub
 int networkAlertStub(float celcius) 
@@ -11,5 +11,5 @@ int networkAlertStub(float celcius)
     // Return 200 for ok
     // Return 500 for not-ok
     // stub always succeeds and returns 200
-    return testNetworkAlertStatus;
+    return test_AlertStatusOfNetwork ;
 }
