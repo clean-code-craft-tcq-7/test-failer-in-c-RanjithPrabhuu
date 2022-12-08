@@ -12,5 +12,3 @@ typedef struct{
     const char *minorColor;
 }colorPairRepository;
 
-//function pointer for test codes
-typedef int (*networkAlertStub_FunPtr )(float);
