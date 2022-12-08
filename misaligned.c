@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <string.h> 
-#include "config.h"
+#include "misalignedConfig.h"
 
 //variable added for test case addition
 int counter = 0;
@@ -82,6 +82,8 @@ int main()
     assert(strcmp(colorPairBuffer,"4  | White  | Brown") == 0);
     printColorPair(colorPairBuffer, 4);
     assert(strcmp(colorPairBuffer,"5  | White  | Slate") == 0);
+    printColorPair(colorPairBuffer, 5);
+    assert(strcmp(colorPairBuffer,"6  | Red    | Blue") == 0);
     
     // similar to the above 5 test cases for major color "white" indentation check, the test cases can be extended for all the other four major color's and their minor color pair's
     
