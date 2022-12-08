@@ -2,4 +2,4 @@
 int networkAlertStub(float celcius);
 
 // extern of variable which returns the network alert status
-extern int testNetworkAlertStatus;
+extern int test_AlertStatusOfNetwork ;
